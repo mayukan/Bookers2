@@ -13,7 +13,7 @@
    <body>
       <header>
         <!--Title bar-->
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
        <div class = "container">
        <a class = "navbar-brand" href ="https://f00bb862f1af4d9ba1713d59cf0d5071.vfs.cloud9.ap-northeast-1.amazonaws.com/">
        <span>Bookers</span>
@@ -29,6 +29,7 @@
   　  <% if user_signed_in? %>
 
       <li>
+      <!--<a class="nav-link text-light">-->
       <i class="fas fa-home"></i>
       <%= link_to 'Home', homes_top_path %>
       </li>
