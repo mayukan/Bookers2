@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'new/index'
-  get 'new/show'
   get 'homes/top'
   get "homes/about" => "homes#about"
   devise_for :users
