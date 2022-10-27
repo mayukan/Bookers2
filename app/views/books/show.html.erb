@@ -3,6 +3,9 @@
   <div class='col-md-3'>
 
     <h2>User info</h2>
+      <li>
+        <%= image_tag %>
+      </li>
     <table class='table'>
 
     <tr>
@@ -44,8 +47,15 @@
     <h2>Book detail</h2>
     <table class="table ">
     <tbody>
-     <tr>
-       <td></td>
+     <tr></tr>
+       <td>
+        <% if @book.image.attached? %>
+  　   　<%= image_tag @book.image, size: "100x100" %>
+　　　　<% else %>
+  　　　　　<%= image_tag 'no_image', size: "100x100" %>
+　　　　<% end %>
+　　　　<!--<%= link_to "EDIT", edit_book_path(@book.id) %>-->
+　　　　</td>
      </tr>
 
    </tbody>
