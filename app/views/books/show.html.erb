@@ -45,8 +45,9 @@
     <div class="col-md-8 offset-md-1">
     <h2>Book detail</h2>
     <table class="table ">
-    <tbody>
-     <tr>
+
+      <tbody>
+      <tr>
        <td>
         <% if @book.image.attached? %>
   　     <%= image_tag @user.get_profile_image(100,100) %>
@@ -54,7 +55,13 @@
   　　　　　<%= image_tag 'no_image', size: "100x100" %>
 　　　　<% end %>
 　　　　</td>
+　　　　<br>
+　　　　<th><%= @user.name %></th>
+
+　　　　<td><%= @book.title %></td>
+　　　　<td><%= @book.body %></td>
      </tr>
+
 
    </tbody>
    </table>
