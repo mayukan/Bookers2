@@ -4,6 +4,8 @@
   <h1>User info</h1>
 
   <%= form_with model: @user do |form| %>
+  <%= form_with model: book, url: update_book_path(@Book.id), method: :patch do |f| %>
+
      <div class="form-group">
         <label for="user_name">Name</label>
         <%= form.text_field :name, class:'form-control user_name' %>

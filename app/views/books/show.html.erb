@@ -51,16 +51,22 @@
       <tr>
        <td>
         <% if @book.image.attached? %>
-  　     <%= image_tag @user.get_profile_image(100,100) %>
-　　　　<% else %>
-  　　　　　<%= image_tag 'no_image', size: "100x100" %>
-　　　　<% end %>
-　　　　</td>
-　　　　<br>
-　　　　<th><%= @user.name %></th>
+         <%= image_tag @user.get_profile_image(100,100) %>
+        <% else %>
+            <%= image_tag 'no_image', size: "100x100" %>
+        <% end %>
+        </td>
+        <br>
+        <th><%= @user.name %></th>
 
-　　　　<td><%= @book.title %></td>
-　　　　<td><%= @book.body %></td>
+        <td><%= @book.title %></td>
+        <td><%= @book.body %></td>
+     </tr>
+
+     <tr>
+
+       <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %>
+
      </tr>
 
 
