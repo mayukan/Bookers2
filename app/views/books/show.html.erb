@@ -47,32 +47,32 @@
     <h2>Book detail</h2>
     <table class="table ">
 
-      <tbody>
-      <tr>
+       <tbody>
+       <tr>
        <td>
-        <% if @book.image.attached? %>
-         <%= image_tag @user.get_profile_image(100,100) %>
-        <% else %>
-            <%= image_tag 'no_image', size: "100x100" %>
+         <% if @book.image.attached? %>
+           <%= image_tag @user.get_profile_image(100,100) %>
+         <% else %>
+           <%= image_tag 'no_image', size: "100x100" %>
+         <% end %>
+       </td>
+
+       <td><%= @user.name %></td>
+
+       <td>
+        <%= link_to book_path(@book.id) do %>
+        <%= @book.title %>
         <% end %>
-        </td>
-        <br>
-        <th><%= @user.name %></th>
+       </td>
+       <td><%= @book.body %></td>
+       <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %></td>
+       <td><%= link_to "Destroy", edit_book_path(@book.id), class: "btn btn-sm btn-danger" %></td>
 
-        <td><%= @book.title %></td>
-        <td><%= @book.body %></td>
-     </tr>
-
-     <tr>
-
-       <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %>
-
-     </tr>
-
-
-   </tbody>
+       </tr>
+       </tbody>
    </table>
    </div>
+
 
   </div>
   </div>
