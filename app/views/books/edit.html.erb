@@ -9,15 +9,15 @@
         <%= form.text_field :title, class:'form-control book_title' %>
      </div>
 
-      <div class="form-group">
+     <div class="form-group">
         <label for="book_body">Opinion</label>
         <%= form.text_area:body,class:"form-control book_body" %>
-      </div>
+     </div>
   <% end %>
 
-      <div class="form-group">
+     <div class="form-group">
         <%= link_to "Update", books_path, class: "btn btn-sm btn-success" %>
-      </div>
+     </div>
 
        <%= link_to "Show", book_path(@book.id) %>
         |

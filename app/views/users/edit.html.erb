@@ -4,7 +4,6 @@
   <h1>User info</h1>
 
   <%= form_with model: @user do |form| %>
-  <%= form_with model: book, url: update_book_path(@Book.id), method: :patch do |f| %>
 
      <div class="form-group">
         <label for="user_name">Name</label>
@@ -15,18 +14,16 @@
        <label for="user_image">Image</label>
        <br>
        <%= form.file_field :profile_image %>
-    </div>
+     </div>
 
-      <div class="form-group">
+     <div class="form-group">
         <label for="user_introduction">Introduction</label>
         <%= form.text_area:body,class:"form-control user_introduction" %>
-      </div>
-     <% end %>
-
-
-      <div class="form-group">
-        <%= link_to "Update User", user_path, class: "btn btn-sm btn-secondary" %>
-      </div>
+     </div>
+     <div class="form-group">
+       <%= form.submit "Update User", class: "btn btn-sm btn-secondary" %>
+       </div>
+  <% end %>
 
 
 </div>
