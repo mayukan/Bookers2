@@ -40,7 +40,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     if @book.destroy
-      redirect_to book_path(@book), notice: "アウトプットを削除しました"
+      redirect_to books_path, notice: "アウトプットを削除しました"
     else
       flash.now[:danger] = "削除に失敗しました"
       render 'show'
