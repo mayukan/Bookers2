@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @book = Book.new
     @user = User.find(params[:id])
     @books = @user.books.all
+    #@post_images = @user.post_images.page(params[:page])
   end
 
   def edit
