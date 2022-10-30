@@ -29,18 +29,18 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      redirect_to book_path(book.id), notice: "アウトプットを編集しました"
+      redirect_to book_path(@book), notice: "アウトプットを編集しました"
     else
       flash.now[:danger] = "編集に失敗しました"
       render 'edit'
     end
   end
-  
+
 
   def destroy
     @book = Book.find(params[:id])
     if @book.destroy
-      redirect_to book_path(book.id), notice: "アウトプットを削除しました"
+      redirect_to book_path(@book), notice: "アウトプットを削除しました"
     else
       flash.now[:danger] = "削除に失敗しました"
       render 'show'

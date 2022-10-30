@@ -3,7 +3,7 @@
 
   <h1>Editing Book</h1>
 
-  <%= form_with model: @book do |form| %>
+  <%= form_with model: @book, method: :patch do |form| %>
      <div class="form-group">
         <label for="book_title">Title</label>
         <%= form.text_field :title, class:'form-control book_title' %>
@@ -13,11 +13,10 @@
         <label for="book_body">Opinion</label>
         <%= form.text_area:body,class:"form-control book_body" %>
      </div>
-  <% end %>
-
      <div class="form-group">
-        <%= link_to "Update", books_path, class: "btn btn-sm btn-success" %>
+        <%= form.submit "Update", class: "btn btn-sm btn-success" %>
      </div>
+  <% end %>
 
        <%= link_to "Show", book_path(@book.id) %>
         |
