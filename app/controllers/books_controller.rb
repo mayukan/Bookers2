@@ -29,7 +29,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      redirect_to book_path(@book), notice: "アウトプットを編集しました"
+      redirect_to book_path(@book), notice: "You have updated book successfully!"
     else
       flash.now[:danger] = "編集に失敗しました"
       render 'edit'
