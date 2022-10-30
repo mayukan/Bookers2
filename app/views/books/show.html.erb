@@ -27,7 +27,6 @@
 	  <h2 class="mt-3">New book</h2>
 	    <%= form_with model: @new_book, method: :post do |f| %>
 
-
     <div class="form-group">
       <label for="book_title">Title</label>
       <%= f.text_field:title,class:'form-control book_title' %>
@@ -55,9 +54,11 @@
            <% else %>
              <%= image_tag 'no_image', size: "100x100" %>
            <% end %>
+           <br>
+           <%= link_to user_path(@user.id) do %>
+            <%= @user.name %>
+           <% end %>
          </td>
-
-         <td><%= @user.name %></td>
 
          <td>
            <%= link_to book_path(@book.id) do %>
