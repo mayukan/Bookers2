@@ -12,7 +12,19 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.save
-    redirect_to books_path
+    if @user.update(user_params)
+      redirect_to user_path, notice:"update text"
+    else
+      flash.now[:danger] = "編集に失敗しました"
+    render 'edit'
+    end
   end
-end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :introduction, :image)
+  end
+
+
+  end
