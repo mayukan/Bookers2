@@ -49,15 +49,11 @@
        <tbody>
        <tr>
          <td>
-           <% if @book.image.attached? %>
              <%= image_tag @user.get_profile_image(100,100) %>
-           <% else %>
-             <%= image_tag 'no_image', size: "100x100" %>
-           <% end %>
            <br>
-           <%= link_to user_path(@user.id) do %>
-            <%= @user.name %>
-           <% end %>
+             <%= link_to user_path(@user.id) do %>
+             <%= @user.name %>
+             <% end %>
          </td>
 
          <td>
