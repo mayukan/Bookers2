@@ -44,10 +44,8 @@
         <table class="table table-hover table-inverse">
           <thead>
             <tr>
-              <th></th>
               <th>image</th>
               <th>name</th>
-              <th></th>
               <th></th>
               <th colspan="3"></th>
             </tr>
@@ -61,10 +59,12 @@
                   <% end %>
                 </td>
                 <td><%= user.name %></td>
+                <td><%= link_to "Show", user_path(@user.id) %></td>
                 </tr>
             <% end %>
            </tbody>
           </thead>
+          </table>
       </div>
     </div>
   </div>
