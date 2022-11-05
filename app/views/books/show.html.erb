@@ -63,7 +63,7 @@
          </td>
          <td><%= @book.body %></td>
 
-       <% if user_signed_in? && current_user.id = @book.user_id %>
+       <% if current_user == @book.user %>
          <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %></td>
          <td><%= link_to "Destroy", book_path, method: :delete, class: "btn btn-sm btn-danger" %></td>
        <% end %>

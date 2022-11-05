@@ -9,10 +9,13 @@
 
 
   <% if @book.errors.any? %>
-  <div>
-      <% @book.errors.fullgit _messages.each do |message| %>
+  <div id="error_explanation">
+     <%= @book.errors.count %>errors prohibited this book from being saved:
+     <ul>
+      <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
+     </ul>
   </div>
  <% end %>
 

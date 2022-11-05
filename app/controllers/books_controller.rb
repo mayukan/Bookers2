@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+
+  before_action :ensure_correct_user, only:[:edit, :update, :destroy]
+
   def new
     @book = Book.new
   end
@@ -37,7 +40,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book), notice: "You have updated book successfully!"
     else
       flash.now[:danger] = "編集に失敗しました"
-      render 'edit'
+      render :edit
     end
   end
 
@@ -58,5 +61,11 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body, :image)
   end
 
+  def ensure_correct_user
+    @book = Book.find(params[:id])
+    unless current_user == @book.user
+      redirect_to books_path
+    end
+  end
 
 end
