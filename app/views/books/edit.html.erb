@@ -7,6 +7,7 @@
 
   <h1>Editing Book</h1>
 
+
   <% if @book.errors.any? %>
   <div>
       <% @book.errors.fullgit _messages.each do |message| %>
@@ -14,6 +15,7 @@
       <% end %>
   </div>
  <% end %>
+
 
   <%= form_with model: @book, method: :patch do |form| %>
      <div class="form-group">
@@ -26,9 +28,11 @@
         <%= form.text_area:body,class:"form-control book_body" %>
      </div>
      <div class="form-group">
-        <%= form.submit "Update", class: "btn btn-sm btn-success" %>
+        <%= form.submit "Update Book", class: "btn btn-sm btn-success" %>
      </div>
   <% end %>
+
+
 
        <%= link_to "Show", book_path(@book.id) %>
         |
